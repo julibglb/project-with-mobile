@@ -1,0 +1,38 @@
+h1 {
+    font-family: SourceSansPro;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 32px;
+
+    @include breakpoint("small") {
+        font-size: 50px;
+    }
+
+    @include breakpoint("medium") {
+        font-size: 52px;
+    }
+
+    @include breakpoint("large") {
+        font-size: 80px;
+    }
+}
+
+h2 {
+    font-family: SourceSansPro;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+h3 {
+    font-family: Poppins;
+    font-weight: 400;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("large") {
+        flex-direction: row;
+    }
+}
