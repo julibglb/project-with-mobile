@@ -1,38 +1,177 @@
-h1 {
-    font-family: SourceSansPro;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 32px;
-
-    @include breakpoint("small") {
-        font-size: 50px;
-    }
-
-    @include breakpoint("medium") {
-        font-size: 52px;
-    }
+.container {
+    padding: 0 24px;
+    max-width: 1281px;
 
     @include breakpoint("large") {
-        font-size: 80px;
+        margin: 0 auto;
+        padding: 0;
     }
 }
 
-h2 {
-    font-family: SourceSansPro;
-    font-weight: 400;
-    font-size: 32px;
+.text-style-green {
+    color: $green;
 }
 
-h3 {
-    font-family: Poppins;
-    font-weight: 400;
+* {
+    box-sizing: border-box;
+}
+body {
+    min-width: 320px;
 }
 
-.container {
+//-----------------------HEADER CONTENT---------------//
+.header-content {
+    padding-bottom: 50px;
+    position: relative;
+
+    &::after {
+        display: block;
+        height: 100%;
+        background-color: #e4ffff;
+        width: 107px;
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 24px;
+        z-index: -1;
+    }
+}
+
+.top-wraper {
+    @include breakpoint("small") {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.top-content {
     display: flex;
     flex-direction: column;
+    max-width: 380px;
+    padding: 68px 0;
+    margin: 0 auto;
 
-    @include breakpoint("large") {
-        flex-direction: row;
+    h1 {
+        font-family: Poppins;
+        font-size: 32px;
+        font-weight: bold;  
+        line-height: normal;
+        margin-bottom: 40px;
+        max-width: 300px;
+    }
+
+    button {
+        @include buttonPrimary;
+        
+    }
+}
+
+.middle-content {
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto;
+    font-family: Poppins;
+    margin-bottom: 64px;
+
+    & > img {
+        display: block;
+        margin-left: auto;
+        margin-right: 39px;
+        border-radius: 24px 24px 60px 24px;
+        
+        
+    }
+
+}
+
+.instructors {
+    position: absolute;
+    top: 138px;
+    left: 6px;
+    width: 142px;
+    box-shadow: 0 0 37.6px 0 rgba(112, 112, 112, 0.25);
+    background-color: $white;
+    font-size: 10.9px;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    border-radius: 7px 7px 16px 7px;
+    padding: 9px 13px 0px 13px;
+}
+
+.instructors-img {
+    margin-top: 10px;
+}
+
+.instructors-img img:not(:first-child) {
+    margin-left: -15px;
+}
+
+.students {
+    width: 77px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9.1px 7.8px 4.4px;
+    box-shadow: 0 0 25.8px 0 rgba(112, 112, 112, 0.25);
+    background-color: $white;
+    border-radius: 4px 4px 10px 4px;
+    position: absolute;
+    bottom: 22px;
+    right: 27px;
+
+    & p {
+        font-size: 7.2px;
+        font-weight: 500;
+        text-align: center;
+        line-height: normal;
+    }
+
+    & span {
+        font-size: 14.5px;
+        font-weight: 600;
+        margin: 3px 0;
+        
+    }
+}
+
+.bottom-content {
+    font-family: Poppins;
+    font-size: 14.3px;
+    font-weight: normal;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px 10px;
+
+    @include breakpoint("small") {
+        justify-content: center;
+        gap: 24px 18px;
+    }
+}
+
+.possibility {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: calc(50% - 5px);
+    gap: 10px;
+    padding: 9px 0px 9px 15px;
+    border-radius: 4.5px;
+    background-color: #dff;
+
+    @include breakpoint("small") {
+        width: calc(33% - 10px);
+    }
+}
+
+.possibility:last-child:nth-child(odd) {
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+
+    @include breakpoint("small") {
+        max-width: calc(33% - 10px);
+        margin: 0;
     }
 }
