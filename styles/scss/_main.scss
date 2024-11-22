@@ -23,6 +23,7 @@ body {
 .header-content {
     padding-bottom: 50px;
     position: relative;
+    margin-bottom: 74px;
 
     &::after {
         display: block;
@@ -42,6 +43,10 @@ body {
         display: flex;
         flex-direction: row;
     }
+
+    @include breakpoint("large") {
+        width: 100%;
+    }
 }
 
 .top-content {
@@ -51,6 +56,11 @@ body {
     padding: 68px 0;
     margin: 0 auto;
 
+    @include breakpoint("large"){
+        max-width: 580px;
+    }
+    
+
     h1 {
         font-family: Poppins;
         font-size: 32px;
@@ -58,6 +68,11 @@ body {
         line-height: normal;
         margin-bottom: 40px;
         max-width: 300px;
+
+        @include breakpoint("large") {
+            font-size: 60px;
+            max-width: 580px;
+        }
     }
 
     button {
@@ -75,16 +90,22 @@ body {
 
     & > img {
         display: block;
+        width: 260px;
+        height: auto;
         margin-left: auto;
         margin-right: 39px;
         border-radius: 24px 24px 60px 24px;
         
-        
+        @include breakpoint("large") {
+            width: 431px;
+            height: auto;
+        }
     }
 
 }
 
 .instructors {
+    color: $grey;
     position: absolute;
     top: 138px;
     left: 6px;
@@ -97,18 +118,44 @@ body {
     text-align: center;
     border-radius: 7px 7px 16px 7px;
     padding: 9px 13px 0px 13px;
+
+    @include breakpoint("small") {
+        left: -74px;
+        border-radius: 14px 14px 30px 14px;
+    }
+
+    @include breakpoint("large") {
+        font-size: 20px;
+        width: 262px;
+        padding: 18px 24px 0px 24px;
+        top: 222px;
+        left: -150px;
+    }
 }
 
 .instructors-img {
     margin-top: 10px;
 }
 
+.instructors-img img {
+    width: 27px;
+
+    @include breakpoint("large") {
+        width: 50px;
+    }
+}
+
 .instructors-img img:not(:first-child) {
     margin-left: -15px;
+
+    @include breakpoint("large") {
+        margin-left: -23px;
+    }
 }
 
 .students {
     width: 77px;
+    color: $grey;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,18 +167,43 @@ body {
     bottom: 22px;
     right: 27px;
 
+    @include breakpoint("large") {
+        width: 129px;
+        padding: 15px 13px 8px 13px;
+        border-radius: 7px 7px 17px 7px;
+        bottom: 27px;
+        right: -70px;
+    }
+
     & p {
         font-size: 7.2px;
         font-weight: 500;
         text-align: center;
         line-height: normal;
+
+        @include breakpoint("large") {
+            font-size: 12px;
+        }
     }
 
     & span {
         font-size: 14.5px;
         font-weight: 600;
         margin: 3px 0;
+
+        @include breakpoint("large") {
+            font-size: 24px;
+            margin: 7.5px;
+        }
         
+    }
+}
+
+.students img {
+    width: 18px;
+
+    @include breakpoint("large") {
+        width: 30px;
     }
 }
 
@@ -148,6 +220,13 @@ body {
         justify-content: center;
         gap: 24px 18px;
     }
+
+    @include breakpoint("large") {
+        flex-wrap: nowrap;
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 16px;
+    }
 }
 
 .possibility {
@@ -158,7 +237,7 @@ body {
     gap: 10px;
     padding: 9px 0px 9px 15px;
     border-radius: 4.5px;
-    background-color: #dff;
+    background-color: $blue;
 
     @include breakpoint("small") {
         width: calc(33% - 10px);
@@ -174,4 +253,153 @@ body {
         max-width: calc(33% - 10px);
         margin: 0;
     }
+
+    @include breakpoint("large") {
+        width: calc(33% - 10px);
+    }
+}
+
+//---------------------TOP CATEGORIES------------//
+
+.top-categories {
+    margin-bottom: 57px;
+
+    @include breakpoint("large") {
+        margin-bottom: 97px;
+    }
+}
+
+.categories-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    font-family: Poppins;
+
+    & p {
+        width: 225px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal;  
+        color: $grey;
+
+        @include breakpoint("small") {
+            width: auto;
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;
+        }
+    }
+
+    & a {
+        text-decoration: none;
+        color: $grey;
+        font-size: 14px;
+        font-weight: normal;
+        
+        @include breakpoint("large") {
+            font-size: 24px;
+        }
+    }
+}
+
+
+.scroll {
+    display: none;
+
+    @include breakpoint("large") {
+        display: block;
+        z-index: 10;
+    }
+}
+
+.scroll-left {
+    position: absolute;
+    left: 54px;
+    top: 186px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.scroll-right {
+    position: absolute;
+    right: 32px;
+    top: 186px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.categories-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+
+    & span {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        color: $white;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%;
+
+        @include breakpoint("large") {
+            font-size: 32px;  
+            bottom: 10px;
+            left: 23px;
+            top: unset;
+            transform: unset;
+    }
+}
+
+.categories-card {
+    width: calc(33% - 8px);
+    height: 31vw;
+    position: relative;
+    max-height: 432px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 5px;
+        
+        @include breakpoint("large") {
+            border-radius: 0px;
+        }
+    }
+
+    @include breakpoint("small") {
+        width: calc(25% - 12px);
+        height: 25vw
+    }
+
+    @include breakpoint("large") {
+        width: calc(25% - 25px);
+        height: 432px;
+    }
+}
+
+
+.card-2, .card-3 {
+    display: none;
+
+    @include breakpoint("small") {
+        display: block;
+    }
+}
+
+.card-5 {
+    @include breakpoint("small") {
+        display: none;
+    }
+}
 }
