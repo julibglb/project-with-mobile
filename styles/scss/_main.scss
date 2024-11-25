@@ -1,6 +1,6 @@
 .container {
     padding: 0 24px;
-    max-width: 1281px;
+    max-width: 1240px;
 
     @include breakpoint("large") {
         margin: 0 auto;
@@ -273,18 +273,20 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 24px;
     font-family: Poppins;
 
-    & p {
+    & h3 {
         width: 225px;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 600;
         line-height: normal;  
         color: $grey;
 
         @include breakpoint("small") {
             width: auto;
+            font-size: 24px;
         }
 
         @include breakpoint("large") {
@@ -297,6 +299,10 @@ body {
         color: $grey;
         font-size: 14px;
         font-weight: normal;
+
+        @include breakpoint("small") {
+            font-size: 19px;
+        }
         
         @include breakpoint("large") {
             font-size: 24px;
@@ -311,34 +317,37 @@ body {
     @include breakpoint("large") {
         display: block;
         z-index: 10;
+        position: absolute;
+        width: 100%;
     }
 }
 
-.scroll-left {
-    position: absolute;
-    left: 54px;
-    top: 186px;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.scroll-right {
+.scroll-vector {
     position: absolute;
     right: 32px;
     top: 186px;
+    z-index: 2;
 
     &:hover {
         cursor: pointer;
     }
+
+    &-left {
+        right: unset;
+        left: 32px;
+    }
 }
+
 
 .categories-cards {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: relative;
+
+    @include breakpoint("large") {
+        margin: 0 -15px;
+    }
 
     & span {
         font-family: Poppins;
@@ -356,6 +365,7 @@ body {
             left: 23px;
             top: unset;
             transform: unset;
+        }
     }
 }
 
@@ -383,7 +393,8 @@ body {
     }
 
     @include breakpoint("large") {
-        width: calc(25% - 25px);
+        width: 25%;
+        padding: 0 15px;
         height: 432px;
     }
 }
@@ -402,4 +413,214 @@ body {
         display: none;
     }
 }
+
+//-----------------------POPULAR COURSES---------------//
+
+.popular-courses-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Poppins;
+    margin-bottom: 23px;
+
+    & h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: $grey; 
+
+        @include breakpoint("small") {
+            font-size: 24px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;
+        }
+    }
+
+
+}
+
+.courses-button {
+    position: relative;
+
+    & a {
+        font-size: 12px;
+        font-weight: normal;
+        color: $white;
+        padding: 4px 8px 4px 27px;
+        border-radius: 28.3px;
+        background-color: $green;
+        text-decoration: none;
+
+        @include breakpoint("small") {
+            font-size: 15px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 18px;
+            padding: 8px 16px 8px 54px;
+        }
+    }
+
+    & img {
+        position: absolute;
+        width: 12px;
+        left: 10px;
+        top: 4px;
+
+        @include breakpoint("large") {
+            width: 17px;
+            left: 22px;
+            top: 2px; 
+        }
+    }
+}
+
+.popular-courses-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 33px;
+
+    @include breakpoint("small") {
+        margin-bottom: 60px;
+    }
+
+    @include breakpoint("large") {
+        margin-bottom: 90px;
+    }
+}
+
+.courses-card {
+    font-family: Poppins;
+    width: calc(50% - 8px);
+    margin-bottom: 14px;
+    box-shadow: 0 0 20px 0 rgba(203, 203, 203, 0.25);
+    background-color: #fff;
+
+    @include breakpoint("small") {
+        width: calc(33% - 11px);
+        max-width: 392px;
+        margin-bottom: 22px;
+    }
+
+    @include breakpoint("large") {
+        width: calc(33% - 24px);
+        max-width: 392px;
+        margin-bottom: 31px;
+    }
+
+    & > img {
+        width: 100%;
+        border-radius: 5px 5px 0px 0px;
+        box-shadow: 0 0 20px 0 rgba(203, 203, 203, 0.25);
+    }
+}
+
+.courses-name {
+    position: relative;
+
+    & p {
+        width: 80%;
+        height: 41px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.43;
+        color: $grey;
+        margin: 2px 17px 4px 14px;
+
+        @include breakpoint("large") {
+            font-size: 24px;
+            width: 76%;
+            height: 72px;
+            margin: 24px 0px 42px 24px;
+        }
+    }
+
+}
+
+.courses-rating {
+    position: absolute;
+    right: 6px;
+    top: 0px;
+
+    @include breakpoint("large") {
+        right: 24px;
+        top: 8px;
+    }
+
+    & span {
+        font-size: 10px;
+
+        @include breakpoint("large") {
+            font-size: 14px;
+        }
+    }
+
+    & img {
+        height: 9px;
+        width: auto;
+        transform: translateY(1px);
+
+        @include breakpoint("large") {
+            width: 15px;
+            height: auto;
+        }
+    }
+}
+
+.course-price-info {
+    display: block; 
+
+    @include breakpoint("large") {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 24px 14px 10px;
+    }
+}
+
+.course-price {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 4px 0px 12px 14px;
+    
+    @include breakpoint("large"){
+        font-size: 24px;
+    }
+}
+
+.courses-info {
+    font-size: 12px;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 9px;
+
+    & img {
+        width: 10px;
+        position: absolute;
+        left: 67px;
+        top: 2px;
+
+        @include breakpoint("large") {
+            width: 13px;
+            left: 87px;
+        }
+    }
+
+    & span {
+        margin: 12px 6px 0 14px;
+
+        @include breakpoint("large") {
+            font-size: 16px;
+            margin: 14px 14px 0 14px;
+        }
+    }
 }

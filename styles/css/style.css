@@ -466,7 +466,7 @@ table {
 }
 .container {
   padding: 0 24px;
-  max-width: 1281px;
+  max-width: 1240px;
 }
 @media (min-width: 1281px) {
   .container {
@@ -760,23 +760,25 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 24px;
   font-family: Poppins;
 }
-.categories-text p {
+.categories-text h3 {
   width: 225px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: normal;
   color: #333;
 }
 @media (min-width: 769px) {
-  .categories-text p {
+  .categories-text h3 {
     width: auto;
+    font-size: 24px;
   }
 }
 @media (min-width: 1281px) {
-  .categories-text p {
+  .categories-text h3 {
     font-size: 32px;
   }
 }
@@ -785,6 +787,11 @@ body {
   color: #333;
   font-size: 14px;
   font-weight: normal;
+}
+@media (min-width: 769px) {
+  .categories-text a {
+    font-size: 19px;
+  }
 }
 @media (min-width: 1281px) {
   .categories-text a {
@@ -799,25 +806,23 @@ body {
   .scroll {
     display: block;
     z-index: 10;
+    position: absolute;
+    width: 100%;
   }
 }
 
-.scroll-left {
-  position: absolute;
-  left: 54px;
-  top: 186px;
-}
-.scroll-left:hover {
-  cursor: pointer;
-}
-
-.scroll-right {
+.scroll-vector {
   position: absolute;
   right: 32px;
   top: 186px;
+  z-index: 2;
 }
-.scroll-right:hover {
+.scroll-vector:hover {
   cursor: pointer;
+}
+.scroll-vector-left {
+  right: unset;
+  left: 32px;
 }
 
 .categories-cards {
@@ -825,6 +830,11 @@ body {
   flex-direction: row;
   justify-content: space-between;
   position: relative;
+}
+@media (min-width: 1281px) {
+  .categories-cards {
+    margin: 0 -15px;
+  }
 }
 .categories-cards span {
   font-family: Poppins;
@@ -845,13 +855,14 @@ body {
     transform: unset;
   }
 }
-.categories-cards .categories-card {
+
+.categories-card {
   width: calc(33% - 8px);
   height: 31vw;
   position: relative;
   max-height: 432px;
 }
-.categories-cards .categories-card img {
+.categories-card img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -861,32 +872,249 @@ body {
   border-radius: 5px;
 }
 @media (min-width: 1281px) {
-  .categories-cards .categories-card img {
+  .categories-card img {
     border-radius: 0px;
   }
 }
 @media (min-width: 769px) {
-  .categories-cards .categories-card {
+  .categories-card {
     width: calc(25% - 12px);
     height: 25vw;
   }
 }
 @media (min-width: 1281px) {
-  .categories-cards .categories-card {
-    width: calc(25% - 25px);
+  .categories-card {
+    width: 25%;
+    padding: 0 15px;
     height: 432px;
   }
 }
-.categories-cards .card-2, .categories-cards .card-3 {
+
+.card-2, .card-3 {
   display: none;
 }
 @media (min-width: 769px) {
-  .categories-cards .card-2, .categories-cards .card-3 {
+  .card-2, .card-3 {
     display: block;
   }
 }
+
 @media (min-width: 769px) {
-  .categories-cards .card-5 {
+  .card-5 {
     display: none;
+  }
+}
+
+.popular-courses-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: Poppins;
+  margin-bottom: 23px;
+}
+.popular-courses-title h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+@media (min-width: 769px) {
+  .popular-courses-title h3 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1281px) {
+  .popular-courses-title h3 {
+    font-size: 32px;
+  }
+}
+
+.courses-button {
+  position: relative;
+}
+.courses-button a {
+  font-size: 12px;
+  font-weight: normal;
+  color: #fff;
+  padding: 4px 8px 4px 27px;
+  border-radius: 28.3px;
+  background-color: #09B451;
+  text-decoration: none;
+}
+@media (min-width: 769px) {
+  .courses-button a {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1281px) {
+  .courses-button a {
+    font-size: 18px;
+    padding: 8px 16px 8px 54px;
+  }
+}
+.courses-button img {
+  position: absolute;
+  width: 12px;
+  left: 10px;
+  top: 4px;
+}
+@media (min-width: 1281px) {
+  .courses-button img {
+    width: 17px;
+    left: 22px;
+    top: 2px;
+  }
+}
+
+.popular-courses-cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 33px;
+}
+@media (min-width: 769px) {
+  .popular-courses-cards {
+    margin-bottom: 60px;
+  }
+}
+@media (min-width: 1281px) {
+  .popular-courses-cards {
+    margin-bottom: 90px;
+  }
+}
+
+.courses-card {
+  font-family: Poppins;
+  width: calc(50% - 8px);
+  margin-bottom: 14px;
+  box-shadow: 0 0 20px 0 rgba(203, 203, 203, 0.25);
+  background-color: #fff;
+}
+@media (min-width: 769px) {
+  .courses-card {
+    width: calc(33% - 11px);
+    max-width: 392px;
+    margin-bottom: 22px;
+  }
+}
+@media (min-width: 1281px) {
+  .courses-card {
+    width: calc(33% - 24px);
+    max-width: 392px;
+    margin-bottom: 31px;
+  }
+}
+.courses-card > img {
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0 0 20px 0 rgba(203, 203, 203, 0.25);
+}
+
+.courses-name {
+  position: relative;
+}
+.courses-name p {
+  width: 80%;
+  height: 41px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  color: #333;
+  margin: 2px 17px 4px 14px;
+}
+@media (min-width: 1281px) {
+  .courses-name p {
+    font-size: 24px;
+    width: 76%;
+    height: 72px;
+    margin: 24px 0px 42px 24px;
+  }
+}
+
+.courses-rating {
+  position: absolute;
+  right: 6px;
+  top: 0px;
+}
+@media (min-width: 1281px) {
+  .courses-rating {
+    right: 24px;
+    top: 8px;
+  }
+}
+.courses-rating span {
+  font-size: 10px;
+}
+@media (min-width: 1281px) {
+  .courses-rating span {
+    font-size: 14px;
+  }
+}
+.courses-rating img {
+  height: 9px;
+  width: auto;
+  transform: translateY(1px);
+}
+@media (min-width: 1281px) {
+  .courses-rating img {
+    width: 15px;
+    height: auto;
+  }
+}
+
+.course-price-info {
+  display: block;
+}
+@media (min-width: 1281px) {
+  .course-price-info {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 24px 14px 10px;
+  }
+}
+
+.course-price {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px 0px 12px 14px;
+}
+@media (min-width: 1281px) {
+  .course-price {
+    font-size: 24px;
+  }
+}
+
+.courses-info {
+  font-size: 12px;
+  font-weight: normal;
+  position: relative;
+  padding: 0 0 9px;
+}
+.courses-info img {
+  width: 10px;
+  position: absolute;
+  left: 67px;
+  top: 2px;
+}
+@media (min-width: 1281px) {
+  .courses-info img {
+    width: 13px;
+    left: 87px;
+  }
+}
+.courses-info span {
+  margin: 12px 6px 0 14px;
+}
+@media (min-width: 1281px) {
+  .courses-info span {
+    font-size: 16px;
+    margin: 14px 14px 0 14px;
   }
 }
