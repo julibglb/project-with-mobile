@@ -175,7 +175,15 @@ body {
         right: -70px;
     }
 
-    & p {
+    img {
+        width: 18px;
+    
+        @include breakpoint("large") {
+            width: 30px;
+        }
+    }
+
+    p {
         font-size: 7.2px;
         font-weight: 500;
         text-align: center;
@@ -186,7 +194,7 @@ body {
         }
     }
 
-    & span {
+    span {
         font-size: 14.5px;
         font-weight: 600;
         margin: 3px 0;
@@ -196,14 +204,6 @@ body {
             margin: 7.5px;
         }
         
-    }
-}
-
-.students img {
-    width: 18px;
-
-    @include breakpoint("large") {
-        width: 30px;
     }
 }
 
@@ -277,7 +277,7 @@ body {
     margin-bottom: 24px;
     font-family: Poppins;
 
-    & h3 {
+    h3 {
         width: 225px;
         font-size: 16px;
         font-weight: 600;
@@ -294,7 +294,7 @@ body {
         }
     }
 
-    & a {
+    a {
         text-decoration: none;
         color: $grey;
         font-size: 14px;
@@ -349,7 +349,7 @@ body {
         margin: 0 -15px;
     }
 
-    & span {
+    span {
         font-family: Poppins;
         font-size: 16px;
         font-weight: 600;
@@ -423,7 +423,11 @@ body {
     font-family: Poppins;
     margin-bottom: 23px;
 
-    & h3 {
+    @include breakpoint("large") {
+        margin-bottom: 64px;
+    }
+
+    h3 {
         font-size: 16px;
         font-weight: 600;
         color: $grey; 
@@ -443,7 +447,7 @@ body {
 .courses-button {
     position: relative;
 
-    & a {
+    a {
         font-size: 12px;
         font-weight: normal;
         color: $white;
@@ -462,7 +466,7 @@ body {
         }
     }
 
-    & img {
+    img {
         position: absolute;
         width: 12px;
         left: 10px;
@@ -521,7 +525,7 @@ body {
 .courses-name {
     position: relative;
 
-    & p {
+    p {
         width: 80%;
         height: 41px;
         overflow: hidden;
@@ -554,7 +558,7 @@ body {
         top: 8px;
     }
 
-    & span {
+    span {
         font-size: 10px;
 
         @include breakpoint("large") {
@@ -562,7 +566,7 @@ body {
         }
     }
 
-    & img {
+    img {
         height: 9px;
         width: auto;
         transform: translateY(1px);
@@ -603,7 +607,7 @@ body {
     position: relative;
     padding: 0 0 9px;
 
-    & img {
+    img {
         width: 10px;
         position: absolute;
         left: 67px;
@@ -615,12 +619,452 @@ body {
         }
     }
 
-    & span {
+    span {
         margin: 12px 6px 0 14px;
 
         @include breakpoint("large") {
             font-size: 16px;
             margin: 14px 14px 0 14px;
         }
+    }
+}
+
+//----------------------NEW SKILL----------------//
+
+.new-skill {
+    .courses-button {
+        @include breakpoint("large") {
+            display: none;
+        }
+    }
+
+    .courses-card:nth-child(n+5) {
+        @include breakpoint("large") {
+            display: none;
+        }
+    }
+
+    .popular-courses-cards {
+        @include breakpoint("large") {
+            position: relative;
+        }
+    }
+}
+
+.new-skill-scroll {
+    display: none;
+
+    @include breakpoint("large") {
+        display: block;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.skill-scroll {
+    position: absolute;
+    right: 32px;
+    bottom: 65px;
+    z-index: 2;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &-left {
+        right: unset;
+        left: 32px;
+    }
+}
+
+//----------------------GOOD EDUCATION----------------//  
+
+.good-education {
+    margin-bottom: 53px;
+}
+
+.good-education-content {
+    font-family: Poppins;
+    
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+
+        @include breakpoint("small") {
+            font-size: 24px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;
+        }
+    }
+}
+
+.job-your-education {
+    margin: 32px auto;
+
+    @include breakpoint("small") {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    @include breakpoint("large") {
+        justify-content: flex-start;
+        margin: 75px auto;
+        align-items: flex-start;
+    }
+}
+
+.job-opportunities {
+    position: relative;
+    max-width: 396px;
+    margin: 0 auto;
+
+    @include breakpoint("small") {
+        margin: 0;
+    }
+
+    & > img {
+        width: 342px;
+        border-radius: 25px 25px 63px 25px;
+
+        @include breakpoint("large") {
+            width: 392px;
+        }
+    }
+}
+
+.job-opportunities-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: -1px;
+    bottom: 91px;
+    background: $white;
+    padding: 10px 8px 22px 8px;
+    font-weight: 600;
+    box-shadow: 0 0 66.5px 0 rgba(112, 112, 112, 0.25);
+    background-color: $white;
+    border-radius: 6px 6px 15px 6px;
+
+    @include breakpoint("large") {
+        padding: 12px 9px 26px 8px;
+        right: -39px;
+        bottom: 109px;
+    }
+
+
+    & > img {
+        width: 36px;
+
+        @include breakpoint("large") {
+            width: 41px;
+        }
+    }
+
+    p {
+        font-size: 21px;
+        margin-top: 10px;
+
+        @include breakpoint("large") {
+            font-size: 24px;
+            margin-top: 16px;
+        }
+
+        &::after {
+            content: url(/assets/icons/underscore.svg);
+            display: block;
+            width: 34px;
+            position: relative;
+            bottom: 15px;
+
+            @include breakpoint("large") {
+                font-size: 24px;
+            }
+        }
+    }
+
+    span {
+        font-size: 14px;
+        margin-top: -15px;
+
+        @include breakpoint("large") {
+            font-size: 16px;
+        }
+    }
+
+}
+
+.your-education {
+    display: flex; 
+    flex-direction: column;
+    color: $grey;
+    line-height: normal;
+
+    @include breakpoint("small") {
+        margin-left: 10px;
+    }
+
+    @include breakpoint("large") {
+        margin-left: 67px;
+        width: 599px;
+    }
+
+    h4 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 25px;
+
+        @include breakpoint("small") {
+            font-size: 32px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 48px;
+        }
+    }
+}
+
+.educational-oppotunities {
+    display: flex;
+    flex-direction: column;
+}
+
+.facility {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+
+    @include breakpoint("small") {
+        font-size: 17px;
+    }
+
+    @include breakpoint("large") {
+        font-size: 20px;
+    }
+
+    img {
+        width: 30px;
+        margin-right: 15px;
+
+        @include breakpoint("small") {
+            width: 40px;
+            margin-right: 20px;
+        }
+
+        @include breakpoint("large") {
+            width: 50px;
+            margin-right: 24px;
+        }
+    }
+}
+
+.facility:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+//---------------------REVIEWS-------------------//
+
+.reviews-content {
+    font-family: "Open Sans";
+    margin-bottom: 48px;
+
+    h3 {
+        display: none;
+
+        @include breakpoint("small") {
+            display: block;
+            font-family: Poppins;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: $grey;
+            margin-bottom: 76px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;
+        }
+    }
+}
+
+.say-about-us {
+
+    @include breakpoint("small") {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.say-about-us-title {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+    margin-bottom: 24px;
+    width: 100%;
+
+    @include breakpoint("small") {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 32px;
+        width: 230px;
+        margin-bottom: 0;
+    }
+
+    @include breakpoint("large") {
+        font-size: 48px;
+        width: 340px;
+    }
+
+    h4 {
+        width: 65%;
+
+        @include breakpoint("small") {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.after-underscore {
+    position: relative;
+
+    &::after{ 
+        content: url(/assets/icons/underscore\ long.svg);
+        display: block;
+        width: 50px;
+        position: absolute;
+        left: 0;
+        top: 9px;
+    }
+}
+
+.reviews-sroll {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 35%;
+
+    @include breakpoint("small") {
+        width: 100%;
+        justify-content: flex-start;
+
+    }
+
+    img {
+        width: 35px;
+        
+        @include breakpoint("small") {
+            width: 50px;
+        }
+    }
+}
+
+.reviews-sroll-right {
+    @include breakpoint("small") {
+        margin-left: 48px;
+    }
+
+}
+
+.reviewers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include breakpoint("small") {
+        justify-content: flex-end; 
+        flex-shrink: 10;
+    }
+
+    @include breakpoint("large") {
+        margin-left: 34px;
+    }
+}
+
+.reviewer {
+    width: calc(50% - 8px);
+    padding: 16px 14px 11px 14px;
+
+    @include breakpoint("small") {
+        width: calc(50% - 16px);
+    }
+
+    @include breakpoint("large") {
+        padding: 59px 48px 48px 48px;
+    }
+
+    & > p {
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal;
+        margin-top: 12px;
+        height: 82px;
+        overflow: hidden;
+        color: $grey;
+
+        @include breakpoint("small") {
+            height: 121px;
+            font-size: 15px;
+            margin-top: 24px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 18px;
+            height: 151px;
+            margin-top: 30px;
+        }
+    }
+}
+
+.reviewer-name-img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        width: 28px;
+
+        @include breakpoint("small") {
+            width: 50px;
+        }
+
+        @include breakpoint("large") {
+            width: 70px;
+        }
+    }
+}
+
+.reviewer-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 12px;
+
+    @include breakpoint("small") {
+        font-size: 16px;
+    }
+
+    @include breakpoint("large") {
+        font-size: 20px;
+    }
+}
+
+.status {
+    font-weight: normal;
+
+    @include breakpoint("large") {
+        font-size: 18px;
     }
 }
