@@ -1165,7 +1165,7 @@ body {
 }
 
 .good-education {
-  margin-bottom: 53px;
+  margin-bottom: 59px;
 }
 
 .good-education-content {
@@ -1209,10 +1209,12 @@ body {
   position: relative;
   max-width: 396px;
   margin: 0 auto;
+  margin-bottom: 32px;
 }
 @media (min-width: 769px) {
   .job-opportunities {
     margin: 0;
+    margin-bottom: 0;
   }
 }
 .job-opportunities > img {
@@ -1238,6 +1240,12 @@ body {
   box-shadow: 0 0 66.5px 0 rgba(112, 112, 112, 0.25);
   background-color: #fff;
   border-radius: 6px 6px 15px 6px;
+}
+@media (min-width: 769px) {
+  .job-opportunities-badge {
+    right: -36px;
+    bottom: 91px;
+  }
 }
 @media (min-width: 1281px) {
   .job-opportunities-badge {
@@ -1294,7 +1302,7 @@ body {
 }
 @media (min-width: 769px) {
   .your-education {
-    margin-left: 10px;
+    margin-left: 45px;
   }
 }
 @media (min-width: 1281px) {
@@ -1568,4 +1576,313 @@ body {
   .status {
     font-size: 18px;
   }
+}
+
+.meet-our-instructors-content {
+  font-family: Poppins;
+}
+.meet-our-instructors-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 45px;
+}
+@media (min-width: 769px) {
+  .meet-our-instructors-content h3 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1281px) {
+  .meet-our-instructors-content h3 {
+    font-size: 32px;
+    margin-bottom: 64px;
+  }
+}
+
+.instructor-cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+@media (min-width: 769px) {
+  .instructor-cards {
+    margin-bottom: 114px;
+  }
+}
+@media (min-width: 1281px) {
+  .instructor-cards {
+    margin-bottom: 175px;
+  }
+}
+
+.card-instructor:last-child {
+  margin: 0 auto;
+}
+@media (min-width: 769px) {
+  .card-instructor:last-child {
+    margin: 0;
+  }
+}
+
+.card-instructor {
+  width: calc(50% - 8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 21px 9px 21px;
+  box-shadow: 0 0 20px 0 rgba(203, 203, 203, 0.25);
+}
+@media (min-width: 769px) {
+  .card-instructor {
+    width: calc(33% - 12px);
+    padding: 24px 33px 15px 33px;
+  }
+}
+@media (min-width: 1281px) {
+  .card-instructor {
+    width: calc(33% - 16px);
+    padding: 30px 46px 19px 46px;
+  }
+}
+.card-instructor img {
+  width: 53px;
+}
+@media (min-width: 769px) {
+  .card-instructor img {
+    width: 80px;
+  }
+}
+@media (min-width: 1281px) {
+  .card-instructor img {
+    width: 114px;
+  }
+}
+.card-instructor > p {
+  font-size: 8px;
+  font-weight: normal;
+  line-height: 1.55;
+  text-align: center;
+  max-width: 200px;
+  max-height: 48px;
+  margin-top: 15px;
+}
+@media (min-width: 769px) {
+  .card-instructor > p {
+    font-size: 12px;
+    max-height: 84px;
+    margin-top: 24px;
+  }
+}
+@media (min-width: 1281px) {
+  .card-instructor > p {
+    font-size: 16px;
+    max-height: 105px;
+    margin-top: 30px;
+    max-width: 299px;
+  }
+}
+
+.card-instructor:not(:last-child) {
+  margin-bottom: 17px;
+}
+@media (min-width: 769px) {
+  .card-instructor:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+.instructor-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+@media (min-width: 769px) {
+  .instructor-name {
+    margin-top: 12px;
+  }
+}
+@media (min-width: 1281px) {
+  .instructor-name {
+    margin-top: 16px;
+  }
+}
+.instructor-name p {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+}
+@media (min-width: 769px) {
+  .instructor-name p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1281px) {
+  .instructor-name p {
+    font-size: 20px;
+  }
+}
+.instructor-name span {
+  font-size: 8px;
+  font-weight: 500;
+}
+@media (min-width: 769px) {
+  .instructor-name span {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1281px) {
+  .instructor-name span {
+    font-size: 16px;
+  }
+}
+
+.CTA {
+  background-image: url("/assets/images/lastCTA1.png");
+  height: 472px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+}
+@media (min-width: 769px) {
+  .CTA {
+    background-image: url("/assets/images/lastCTA.png");
+  }
+}
+@media (min-width: 1281px) {
+  .CTA {
+    height: 532px;
+  }
+}
+
+.CTA-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.CTA-content > img {
+  display: none;
+}
+@media (min-width: 769px) {
+  .CTA-content > img {
+    display: block;
+    transform: translateY(56px);
+    width: 335px;
+    height: 353px;
+  }
+}
+@media (min-width: 1281px) {
+  .CTA-content > img {
+    transform: translateY(-55px);
+    width: 513px;
+    height: 517px;
+  }
+}
+
+.CTA-info {
+  font-family: "Open Sans";
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  padding: 69px 10px 70px 10px;
+  position: relative;
+  width: 400px;
+}
+@media (min-width: 769px) {
+  .CTA-info {
+    margin-left: 40px;
+    text-align: start;
+    padding: 30px 10px 0 10px;
+  }
+}
+@media (min-width: 1281px) {
+  .CTA-info {
+    margin-left: 80px;
+    width: 568px;
+    padding: 41px 10px 0 10px;
+  }
+}
+.CTA-info h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+@media (min-width: 769px) {
+  .CTA-info h2 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1281px) {
+  .CTA-info h2 {
+    font-size: 41px;
+  }
+}
+.CTA-info p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 64px;
+}
+@media (min-width: 769px) {
+  .CTA-info p {
+    font-size: 18px;
+    margin-bottom: 37px;
+  }
+}
+@media (min-width: 1281px) {
+  .CTA-info p {
+    font-size: 24px;
+    margin-bottom: 89px;
+  }
+}
+
+.CTA-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (min-width: 1281px) {
+  .CTA-button {
+    justify-content: start;
+  }
+}
+.CTA-button button:first-child {
+  font-family: SourceSansPro;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  border: 1px solid #09B451;
+  padding: 20px 42px;
+  border-radius: 5px;
+  background-color: #09B451;
+  transition: 0.2s ease-in 0s;
+}
+.CTA-button button:first-child:hover {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+@media (min-width: 1281px) {
+  .CTA-button button:first-child {
+    margin-right: 31px;
+  }
+}
+.CTA-button button {
+  font-family: SourceSansPro;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #09B451;
+  padding: 20px 42px;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: 0.2s ease-in 0s;
+}
+.CTA-button button:hover {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  cursor: pointer;
 }

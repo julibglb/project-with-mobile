@@ -680,7 +680,7 @@ body {
 //----------------------GOOD EDUCATION----------------//  
 
 .good-education {
-    margin-bottom: 53px;
+    margin-bottom: 59px;
 }
 
 .good-education-content {
@@ -721,9 +721,11 @@ body {
     position: relative;
     max-width: 396px;
     margin: 0 auto;
+    margin-bottom: 32px;
 
     @include breakpoint("small") {
         margin: 0;
+        margin-bottom: 0;
     }
 
     & > img {
@@ -749,6 +751,11 @@ body {
     box-shadow: 0 0 66.5px 0 rgba(112, 112, 112, 0.25);
     background-color: $white;
     border-radius: 6px 6px 15px 6px;
+
+    @include breakpoint("small") {
+        right: -36px;
+        bottom: 91px; 
+    }
 
     @include breakpoint("large") {
         padding: 12px 9px 26px 8px;
@@ -805,7 +812,7 @@ body {
     line-height: normal;
 
     @include breakpoint("small") {
-        margin-left: 10px;
+        margin-left: 45px;
     }
 
     @include breakpoint("large") {
@@ -1066,5 +1073,286 @@ body {
 
     @include breakpoint("large") {
         font-size: 18px;
+    }
+}
+
+//---------------------MEET OUR INSTRUCTORS-------------------//
+
+.meet-our-instructors-content {
+    font-family: Poppins;
+
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 45px;
+
+        @include breakpoint("small") {
+            font-size: 24px;   
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;   
+            margin-bottom: 64px;
+        }
+    }
+}
+
+.instructor-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 80px;
+
+    @include breakpoint("small") {
+        margin-bottom: 114px;   
+    }
+
+    @include breakpoint("large") {
+        margin-bottom: 175px;   
+    }
+}
+
+.card-instructor:last-child {
+    margin: 0 auto;
+
+    @include breakpoint("small") {
+        margin: 0;   
+    }    
+}
+
+.card-instructor {
+    width: calc(50% - 8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 21px 9px 21px;
+    box-shadow: 0 0 20px 0 rgba(203, 203, 203, 0.25);
+
+    @include breakpoint("small") {
+        width: calc(33% - 12px);
+        padding: 24px 33px 15px 33px;    
+    }
+
+    @include breakpoint("large") {
+        width: calc(33% - 16px);
+        padding: 30px 46px 19px 46px;    
+    }
+
+    img {
+        width: 53px;
+
+        @include breakpoint("small") {
+            width: 80px;    
+        }
+
+        @include breakpoint("large") {
+            width: 114px;    
+        }
+    }
+
+    & > p {
+        font-size: 8px;
+        font-weight: normal;
+        line-height: 1.55;
+        text-align: center;
+        max-width: 200px;
+        max-height: 48px;
+        margin-top: 15px;
+
+        @include breakpoint("small") {
+            font-size: 12px;
+            max-height: 84px;
+            margin-top: 24px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 16px;
+            max-height: 105px;
+            margin-top: 30px;
+            max-width: 299px;
+        }
+    }
+}
+
+.card-instructor:not(:last-child) {
+    margin-bottom: 17px;
+
+    @include breakpoint("small") {
+        margin-bottom: 0;   
+    }
+}
+
+.instructor-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+
+    @include breakpoint("small") {
+        margin-top: 12px;
+    }
+
+    @include breakpoint("large") {
+        margin-top: 16px;
+    }
+
+    p {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: normal;  
+
+        @include breakpoint("small") {
+            font-size: 16px;
+        }
+        @include breakpoint("large") {
+            font-size: 20px;
+        }
+    }
+
+    span {
+        font-size: 8px;
+        font-weight: 500;
+
+        @include breakpoint("small") {
+            font-size: 12px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 16px;
+        }
+    }
+}
+
+//--------------------CTA-------------------//
+
+.CTA {
+    background-image: url("/assets/images/lastCTA1.png");
+    height: 472px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    
+
+    @include breakpoint("small") {
+        background-image: url("/assets/images/lastCTA.png");
+
+    }
+
+    @include breakpoint("large") {
+        height: 532px;
+    }
+}
+
+.CTA-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    & > img {
+        display: none;
+
+        @include breakpoint("small") {
+            display: block;
+            transform: translateY(56px);
+            width: 335px;
+            height: 353px;
+        }
+
+        @include breakpoint("large") {
+            transform: translateY(-55px);
+            width: 513px;
+            height: 517px;
+        }
+    }
+}
+
+.CTA-info {
+    font-family: "Open Sans";
+    text-align: center;
+    text-transform: capitalize;
+    color: $white;
+    padding: 69px 10px 70px 10px;
+    position: relative;
+    width: 400px;
+    
+    @include breakpoint("small") {
+        margin-left: 40px;
+        text-align: start;
+        padding: 30px 10px 0 10px;
+    }
+
+    @include breakpoint("large") {
+        margin-left: 80px;
+        width: 568px;   
+        padding: 41px 10px 0 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: normal;
+        margin-bottom: 24px;
+
+        @include breakpoint("small") {
+            font-size: 30px;   
+        }
+
+        @include breakpoint("large") {
+            font-size: 41px;   
+        }
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: normal;
+        margin-bottom: 64px;
+
+        @include breakpoint("small") {
+            font-size: 18px;
+            margin-bottom: 37px;  
+        }
+
+        @include breakpoint("large") {
+            font-size: 24px;   
+            margin-bottom: 89px;
+        }
+    }
+}
+
+.CTA-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include breakpoint("large") {
+        justify-content: start;
+    }
+
+    button:first-child{
+        @include buttonPrimary;
+
+        @include breakpoint("large") {
+            margin-right: 31px;
+        }
+    }
+
+    button {
+        font-family: SourceSansPro;
+        font-size: 16px;
+        font-weight: 600;
+        border: 1px solid #09B451;
+        padding: 20px 42px;
+        border-radius: 5px;
+        background-color: $white;
+        transition: 0.2s ease-in 0s;
+    
+        &:hover {
+            color: #000;
+            background-color: #fff;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
     }
 }
