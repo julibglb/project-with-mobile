@@ -729,7 +729,8 @@ body {
     }
 
     & > img {
-        width: 342px;
+        width: 100%;
+        max-width: 342px;
         border-radius: 25px 25px 63px 25px;
 
         @include breakpoint("large") {
@@ -1353,6 +1354,205 @@ body {
             background-color: #fff;
             border: 1px solid #000;
             cursor: pointer;
+        }
+    }
+}
+
+//--------------------FOOTER-------------------//
+
+.footer {
+    background-color: $black;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("small") {
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        flex-wrap: wrap-reverse;
+    }
+}
+
+.footer-info-name {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("small") {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+        padding: 100px 20px 0;
+        margin-bottom: 90px;
+    }
+}
+
+.footer-form {
+    width: 100%;
+    font-family: Poppins;
+    margin-top: 63px;
+    margin-bottom: 48px;
+
+    @include breakpoint("small") {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 51px;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: lighter;
+        line-height: normal;
+        color: $white;
+
+        @include breakpoint("small") {
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+}
+
+.email-button {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 545px;
+    margin-top: 5px;
+
+    @include breakpoint("small") {
+        margin-top: 17px;
+    }
+
+    input {
+        padding: 12px 0 6px 12px;
+        width: 75%;
+        border: none;
+
+        &::placeholder {
+            font-size: 10px;
+            font-weight: 500;
+            color: #3bd27b;
+
+            @include breakpoint("small") {
+                font-size: 14px;
+            }
+        }
+    }
+
+    button {
+        font-size: 10px;
+        font-weight: normal;
+        text-align: start;
+        color: $white;
+        background-color: #3bd27b;
+        width: 25%;
+        border: none;
+        padding: 13px;
+
+        @include breakpoint("small") {
+            font-size: 14px;
+        }
+    }
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 45px;
+
+    @include breakpoint("small") {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    @include breakpoint("large") {
+        
+    }
+}
+
+.footer-info-card {
+    display: flex;
+    flex-direction: column;
+    width: calc(33% - 15px);
+
+    a {
+        text-decoration: none;
+        color: $white;
+        font-family: "Open Sans";
+        font-size: 14px;
+        font-weight: normal;
+
+        @include breakpoint("large") {
+            max-width: 145px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 21px;
+        }
+    }
+}
+
+.footer-info-card:nth-child(n+4) {
+    display: none;
+
+    @include breakpoint("large") {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.footer-name {
+    display: flex;
+    flex-direction: column;
+    max-width: 296px;
+    padding-bottom: 63px;
+
+    @include breakpoint("small") {
+        padding-bottom: 0;
+        margin-right: 91px;
+    }
+
+    
+
+    h3 {
+        font-family: SourceSansPro;
+        font-size: 32.8px;
+        font-weight: 600;
+        color: $white;
+        margin-bottom: 24px;
+    }
+
+    p {
+        display: none;
+
+        @include breakpoint("small") {
+            display: block;
+            font-family: Poppins;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: normal;
+            letter-spacing: 1px;
+            color: $white;
+            margin-bottom: 31px;
+        }
+
+    }
+}
+
+.footer-name-socia {
+    display: flex;
+    flex-direction: row;
+
+
+    img {
+        width: 24px;
+        height: 24px;
+
+        &:not(:last-child) {
+            margin-right: 24px;
         }
     }
 }
