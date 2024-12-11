@@ -490,6 +490,11 @@ body {
 header {
   box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.25);
 }
+@media (min-width: 1025px) {
+  header {
+    box-shadow: unset;
+  }
+}
 
 .header-top {
   display: flex;
@@ -518,6 +523,7 @@ header {
 @media (min-width: 1025px) {
   .main-menu {
     order: 0;
+    width: 545px;
   }
 }
 
@@ -536,18 +542,21 @@ header {
 }
 
 .account-buttons {
-  display: none;
+  display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   justify-content: center;
-  padding: 40px 20px 30px;
+  padding: 41px 30px;
   z-index: 1;
   position: absolute;
   left: 0;
-  top: 91px;
+  top: 60px;
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s;
 }
 @media (min-width: 1025px) {
   .account-buttons {
@@ -558,11 +567,91 @@ header {
     width: auto;
     height: auto;
     box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    align-items: center;
+    transition: unset;
+  }
+}
+.account-buttons button {
+  font-family: SourceSansPro;
+  font-size: 16px;
+  font-weight: 600;
+  border: 0;
+  line-height: 1.25;
+}
+
+#mobile-account:checked + label.mobile-account-icon + div.account-buttons {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search {
+  position: relative;
+}
+
+.search-box {
+  display: none;
+}
+
+.search-input {
+  display: none;
+}
+
+#search-box:checked + label.search-box-img + input.search-input {
+  position: absolute;
+  top: -7px;
+  right: 25px;
+  width: 350px;
+  display: flex;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+#search-box:checked + label.search-box-img + input.search-input::-moz-placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+}
+#search-box:checked + label.search-box-img + input.search-input::placeholder {
+  font-family: Poppins;
+  font-size: 12px;
+}
+
+.button-login-register {
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 1025px) {
+  .button-login-register {
+    width: 204px;
   }
 }
 
+.login-button {
+  background-color: #09B451;
+  padding: 12px 24px;
+  border-radius: 5px;
+  margin-right: 8px;
+  color: #fff;
+}
+@media (min-width: 1025px) {
+  .login-button {
+    padding: 8px 18px;
+    background-color: #fff;
+    color: #09B451;
+    margin-left: 17px;
+  }
+}
+
+.regicter-button {
+  color: #fff;
+  background-color: #09B451;
+  padding: 12px 24px;
+  border-radius: 5px;
+}
+
 .header-navigation {
-  display: none;
+  display: flex;
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -572,28 +661,41 @@ header {
   flex-direction: column;
   padding: 30px 20px;
   z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s;
 }
 @media (min-width: 1025px) {
   .header-navigation {
-    display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding: 0;
     position: static;
     width: auto;
     height: auto;
+    opacity: 1;
+    visibility: visible;
   }
 }
 .header-navigation a {
   font-family: "Open Sans";
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
-  color: #000;
+  text-decoration: none;
   margin-bottom: 20px;
+  color: #333;
 }
 @media (min-width: 1025px) {
   .header-navigation a {
+    width: calc(20% - 12px);
+    font-size: 16px;
     margin-bottom: 0;
   }
+}
+
+#mobile-toggle:checked + label.mobile-burger-icon + nav.header-navigation {
+  opacity: 1;
+  visibility: visible;
 }
 
 .mobile-burger-icon {
@@ -647,10 +749,6 @@ header {
   }
 }
 
-#mobile-toggle:checked + label.mobile-burger-icon + nav.header-navigation {
-  display: flex;
-}
-
 #mobile-toggle:checked + label.mobile-burger-icon span {
   opacity: 0;
 }
@@ -659,10 +757,6 @@ header {
 }
 #mobile-toggle:checked + label.mobile-burger-icon::after {
   transform: rotate(-42deg);
-}
-
-#mobile-account:checked + label.mobile-account-icon + div.account-buttons {
-  display: flex;
 }
 
 .header-bottom {
